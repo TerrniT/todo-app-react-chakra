@@ -22,7 +22,13 @@ function App() {
     },
   ];
 
-  const [todos, setTodos] = useState(localStorage.getItem('todos'));
+  const [todos, setTodos] = useState(
+    () => JSON.parse(localStorage.getItem('todos')) || []
+  );
+
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
 
   function deleteTodo(id) {
     const newTodos = todos.filter(todo => {
