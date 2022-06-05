@@ -1,11 +1,16 @@
+import { Button, HStack, Input } from '@chakra-ui/react'
 import React from 'react'
 
 function AddTodo() {
-  return (
-    <div>
-        
-    </div>
-  )
+    function handleSubmit(e) { }
+    return (
+        <form onSubmit={handleSubmit}>
+            <HStack>
+                <Input />
+                <Button> AddTodo </Button>
+            </HStack>
+        </form>
+    )
 }
 
-export default AddTodo
+export default AddTodo;
