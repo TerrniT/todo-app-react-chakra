@@ -1,5 +1,6 @@
 import React from 'react'
-import { HStack, VStack } from '@chakra-ui/react'
+import { HStack, VStack, Text, IconButton, StackDivider } from '@chakra-ui/react';
+import {FaTrash} from 'react-icons/fa';
 
 function TodoList() {
     const todos = [
@@ -17,10 +18,19 @@ function TodoList() {
         },
     ]
     return (
-        <VStack>
+        <VStack
+            divider={<StackDivider/>}
+            borderColor="gray.100"
+            borderWidth='2px'
+            borderRadius='lg'
+            p='4'
+            w='100%'
+            maxW={{base: '90vw', sm: '80vw', lg: '50vw', xl: '40vw'}}
+        >
             {todos.map(todo=>(
-                <HStack>
-
+                <HStack key={todo.id}>
+                    <Text>{todo.body}</Text>
+                    <IconButton icon={<FaTrash/>} isRound='true'/>
                 </HStack>
             ))}
         </VStack>
