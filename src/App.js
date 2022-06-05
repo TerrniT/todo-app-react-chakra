@@ -22,7 +22,7 @@ function App() {
     },
   ];
 
-  const [todos, setTodos] = useState(initialTodos);
+  const [todos, setTodos] = useState(localStorage.getItem('todos'));
 
   function deleteTodo(id) {
     const newTodos = todos.filter(todo => {

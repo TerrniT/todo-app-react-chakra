@@ -6,10 +6,18 @@ import  {nanoid}  from 'nanoid';
 function AddTodo({addTodo}) {
 
     const toast = useToast()
-    
+
     function handleSubmit(e) { 
         e.preventDefault();
-        
+        if (!content){
+            toast({
+                title: 'No content',
+                status: 'error',
+                duration: 2000,
+                isClosable: true,
+              });
+            return
+        }
         const todo = {
             id: nanoid(),
             body: content,
