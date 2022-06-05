@@ -23,6 +23,13 @@ function App() {
   ];
 
   const [todos, setTodos] = useState(initialTodos);
+
+  function deleteTodo(id) {
+    const newTodos = todos.filter(todo => {
+      return todo.id !== id
+    })
+    setTodos(newTodos)
+  }
   return (
     <VStack p={10}>
       <IconButton icon={<FaSun />}
@@ -40,7 +47,7 @@ function App() {
       >
         Todo Application
       </Heading>
-      <TodoList todos={todos} />
+      <TodoList todos={todos} deleteTodo={deleteTodo}/>
       <AddTodo />
     </VStack>
   );
