@@ -1,4 +1,9 @@
-import { Heading, VStack, IconButton } from '@chakra-ui/react'
+import { 
+  Heading, 
+  VStack, 
+  IconButton,
+  useColorMode 
+} from '@chakra-ui/react'
 import './App.css';
 import TodoList from './components/TodoList';
 import AddTodo from './components/AddTodo';
@@ -40,12 +45,16 @@ function App() {
   function addTodo(todo) {
     setTodos([...todos, todo]);
   }
+
+  const {colorMode, toggleColorMode} = useColorMode();
+
   return (
     <VStack p={10}>
-      <IconButton icon={<FaSun />}
+      <IconButton icon={colorMode === "light" ? <FaSun /> : <FaMoon/>}
         isRound='true'
         size='lg'
         alignSelf='flex-end'
+        onClick={toggleColorMode}
       />
       <Heading
         mb='8'
@@ -57,8 +66,8 @@ function App() {
       >
         Todo Application
       </Heading>
-      <TodoList todos={todos} deleteTodo={deleteTodo}/>
-      <AddTodo addTodo={addTodo}/>
+      <TodoList todos={todos} deleteTodo={deleteTodo} />
+      <AddTodo addTodo={addTodo} />
     </VStack>
   );
 }
