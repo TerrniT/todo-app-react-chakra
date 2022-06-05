@@ -31,6 +31,7 @@ function TodoList({ todos, deleteTodo }) {
             borderColor="gray.400"
             borderWidth='1.5px'
             borderRadius='lg'
+            color="blue.400"
             p='3'
             w='100%'
             maxW={{ base: '90vw', sm: '80vw', lg: '50vw', xl: '25vw' }}

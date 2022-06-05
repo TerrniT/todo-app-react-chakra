@@ -43,6 +43,7 @@ function AddTodo({ addTodo }) {
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                     p="5"
+                    color="blue.400"
                 />
                 <Button
                     bg='blue.500'
