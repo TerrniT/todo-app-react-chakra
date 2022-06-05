@@ -30,6 +30,10 @@ function App() {
     })
     setTodos(newTodos)
   }
+
+  function addTodo(todo) {
+    setTodos([...todos, todo]);
+  }
   return (
     <VStack p={10}>
       <IconButton icon={<FaSun />}
@@ -48,7 +52,7 @@ function App() {
         Todo Application
       </Heading>
       <TodoList todos={todos} deleteTodo={deleteTodo}/>
-      <AddTodo />
+      <AddTodo addTodo={addTodo}/>
     </VStack>
   );
 }

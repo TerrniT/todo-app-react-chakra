@@ -5,11 +5,25 @@ import {
     Text, 
     IconButton, 
     StackDivider,
-    Spacer 
+    Spacer,
+    Badge
 } from '@chakra-ui/react';
 import {FaTrash} from 'react-icons/fa';
 
 function TodoList({todos, deleteTodo}) {
+
+    if(!todos.length){
+        return(
+            <Badge
+                p="4"
+                m="4"
+                borderRadius="lg"
+                colorScheme="Default"
+            >
+                No todos left
+            </Badge>
+        )
+    }
     
     return (
         <VStack
