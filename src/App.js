@@ -1,8 +1,8 @@
-import { 
-  Heading, 
-  VStack, 
+import {
+  Heading,
+  VStack,
   IconButton,
-  useColorMode 
+  useColorMode
 } from '@chakra-ui/react'
 import './App.css';
 import TodoList from './components/TodoList';
@@ -12,20 +12,20 @@ import { useState, useEffect } from 'react'
 
 
 function App() {
-  const initialTodos = [
-    {
-      id: 1,
-      body: 'get bread',
-    },
-    {
-      id: 2,
-      body: 'get pussy',
-    },
-    {
-      id: 3,
-      body: 'start to code',
-    },
-  ];
+  // const initialTodos = [
+  //   {
+  //     id: 1,
+  //     body: 'get bread',
+  //   },
+  //   {
+  //     id: 2,
+  //     body: 'get pussy',
+  //   },
+  //   {
+  //     id: 3,
+  //     body: 'start to code',
+  //   },
+  // ];
 
   const [todos, setTodos] = useState(
     () => JSON.parse(localStorage.getItem('todos')) || []
@@ -46,18 +46,19 @@ function App() {
     setTodos([...todos, todo]);
   }
 
-  const {colorMode, toggleColorMode} = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <VStack p={10}>
-      <IconButton icon={colorMode === "light" ? <FaSun /> : <FaMoon/>}
+      <IconButton icon={colorMode === "light" ? <FaSun /> : <FaMoon />}
         isRound='true'
         size='lg'
         alignSelf='flex-end'
         onClick={toggleColorMode}
       />
       <Heading
-        mb='8'
+        mt={10}
+        mb={10}
         fontWeight='bold'
         size='xl'
         alignSelf='flex-center'
