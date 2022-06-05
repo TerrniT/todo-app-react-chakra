@@ -58,9 +58,9 @@ function App() {
       />
       <Heading
         mb='8'
-        fontWeight='extrabold'
-        size='2xl'
-        alignSelf='flex-start'
+        fontWeight='bold'
+        size='xl'
+        alignSelf='flex-center'
         bgGradient='linear(to-r, green.500, teal.400)'
         bgClip='text'
       >
