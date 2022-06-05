@@ -2,7 +2,9 @@ import {
   Heading,
   VStack,
   IconButton,
-  useColorMode
+  useColorMode,
+  Stack,
+  Text
 } from '@chakra-ui/react'
 import './App.css';
 import TodoList from './components/TodoList';
@@ -55,18 +57,30 @@ function App() {
         size='lg'
         alignSelf='flex-end'
         onClick={toggleColorMode}
+        bgGradient='linear(to-r, blue.700, teal.500)'
+        color="black"
       />
-      <Heading
-        mt={10}
-        mb={10}
-        fontWeight='bold'
-        size='xl'
-        alignSelf='flex-center'
-        bgGradient='linear(to-r, green.500, teal.400)'
-        bgClip='text'
-      >
-        Todo Application
-      </Heading>
+      <Stack>
+        <Heading
+          mt={10}
+
+          fontWeight='bold'
+          size='xl'
+          alignSelf='flex-center'
+          bgGradient='linear(to-r, blue.500, teal.400)'
+          bgClip='text'
+        >
+          Todo Application
+        </Heading>
+        <Text fontSize='xl'
+          textAlign="center"
+          bgGradient='linear(to-l, gray.600, blue.400)'
+          bgClip='text'
+        >
+          by t4rrnit</Text>
+      </Stack>
+
+
       <TodoList todos={todos} deleteTodo={deleteTodo} />
       <AddTodo addTodo={addTodo} />
     </VStack>

@@ -28,12 +28,12 @@ function TodoList({ todos, deleteTodo }) {
     return (
         <VStack
             divider={<StackDivider />}
-            borderColor="gray.100"
-            borderWidth='2px'
+            borderColor="gray.400"
+            borderWidth='1.5px'
             borderRadius='lg'
-            p='4'
+            p='3'
             w='100%'
-            maxW={{ base: '90vw', sm: '80vw', lg: '50vw', xl: '40vw' }}
+            maxW={{ base: '90vw', sm: '80vw', lg: '50vw', xl: '25vw' }}
             alignItems='stretch'
         >
             {todos.map(todo => (

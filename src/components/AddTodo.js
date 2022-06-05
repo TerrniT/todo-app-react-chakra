@@ -45,7 +45,7 @@ function AddTodo({ addTodo }) {
                     p="5"
                 />
                 <Button
-                    bg='green.400'
+                    bg='blue.500'
                     px='8px'
                     type="submit"
                     p='5'
