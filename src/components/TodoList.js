@@ -9,21 +9,8 @@ import {
 } from '@chakra-ui/react';
 import {FaTrash} from 'react-icons/fa';
 
-function TodoList() {
-    const todos = [
-        {
-            id: 1,
-            body: 'get bread',
-        },
-        {
-            id: 2,
-            body: 'get pussy',
-        },
-        {
-            id: 3,
-            body: 'start to code',
-        },
-    ]
+function TodoList({todos}) {
+    
     return (
         <VStack
             divider={<StackDivider/>}

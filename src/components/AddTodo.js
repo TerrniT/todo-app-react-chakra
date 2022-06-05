@@ -10,10 +10,11 @@ function AddTodo() {
                     variant= 'filled'
                     placeholder='what today ill going to-do ..'
                     p="5"
-                    
                 />
                 <Button
                     bg= 'green.400'
+                    px='8px'
+                    type="submit"
                     p='5'
                     borderRadius= 'xl'
                 > AddTodo </Button>

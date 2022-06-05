@@ -3,9 +3,26 @@ import './App.css';
 import TodoList from './components/TodoList';
 import AddTodo from './components/AddTodo';
 import { FaSun, FaMoon } from 'react-icons/fa'
+import { useState, useEffect } from 'react'
 
 
 function App() {
+  const initialTodos = [
+    {
+      id: 1,
+      body: 'get bread',
+    },
+    {
+      id: 2,
+      body: 'get pussy',
+    },
+    {
+      id: 3,
+      body: 'start to code',
+    },
+  ];
+
+  const [todos, setTodos] = useState(initialTodos);
   return (
     <VStack p={10}>
       <IconButton icon={<FaSun />}
@@ -23,8 +40,8 @@ function App() {
       >
         Todo Application
       </Heading>
-      <TodoList/>
-      <AddTodo/>
+      <TodoList todos={todos} />
+      <AddTodo />
     </VStack>
   );
 }
