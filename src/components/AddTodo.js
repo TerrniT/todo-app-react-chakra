@@ -1,7 +1,7 @@
 import { Button, HStack, Input } from '@chakra-ui/react'
 import React from 'react'
 import {useState} from 'react'
-import  nanoid  from 'nanoid';
+import  {nanoid}  from 'nanoid';
 
 function AddTodo({AddTodo}) {
     function handleSubmit(e) { 
@@ -11,6 +11,7 @@ function AddTodo({AddTodo}) {
             id: nanoid(),
             body: content,
         };
+        console.log(todo);
     }
 
     const [content, setContent] = useState('');
