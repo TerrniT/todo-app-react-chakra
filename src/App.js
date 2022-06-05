@@ -1,11 +1,12 @@
-import logo from './logo.svg';
+import {Heading} from '@chakra-ui/react'
 import './App.css';
+import TodoList from './components/TodoList'
+import AddTodo from './components/AddTodo'
+
 
 function App() {
   return (
-    <div className="App">
-      <h1>Todo Application</h1>
-    </div>
+    <Heading>Todo Application</Heading>
   );
 }
 
